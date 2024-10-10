@@ -89,7 +89,7 @@ const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
               <div className="homeBtns">
               <div className="search-container">
                 <input type="text" value={searchUser} onChange={(e)=> setSearchUser(e.target.value)}/>
-                <img src={close} className="closeBtn" onClick={handleClose}/>
+                <img src={close} className="closeBtn" onClick={searchUser.trim() ? handleClose : null}/>
                 <img src={search} className="searchBtn" onClick={handleSearchBtn}/>
                 </div>
                 <button className="adduser" onClick={openModal}>
