@@ -114,7 +114,7 @@ button.deleteBtn {
 button.adduser {
   float: right;
   margin: 5px 38px 21px;
-  background: #7b65ff;
+  background: #3e21eb;;
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -134,7 +134,7 @@ button.moreDetailBtn:hover {
 }
 
 .adduser:hover {
-  background: #3e21eb;
+  background: #ff0202;
 }
 .resTable span{
   display: none;
@@ -165,91 +165,48 @@ button.moreDetailBtn:hover {
   /* padding: 20px; */
 }
 
-/* Global Styles */
-/* .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.adduser {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
+
+.closeBtn, .searchBtn {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  top: 6px;
+  right: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
-.adduser:hover {
-  background-color: #0056b3;
-}
+.closeBtn {right: 39px;padding-right: 1px;}
 
-table {
+.search-container {
+  position: relative;
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
+  max-width: 227px;
+  /* margin: 0 auto; */
+  margin: -2px -26px 21px;
 }
 
-thead {
-  background-color: #f8f9fa;
+div .search-container {
 }
 
-thead th {
-  text-align: left;
-  padding: 10px;
+.homeBtns {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.search-container input {
+  width: 80%;
+  padding: 3px 19px 3px 10px;
   font-size: 16px;
-  background-color: #007bff;
-  color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-tbody td {
-  padding: 10px;
-  border: 1px solid #dee2e6;
-}
 
-tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
-} */
-
-/* Button Styles */
-/* .action button {
-  padding: 5px 10px;
-  margin: 5px;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.editBtn {
-  background-color: #ffc107;
-}
-
-.editBtn:hover {
-  background-color: #e0a800;
-}
-
-.deleteBtn {
-  background-color: #dc3545;
-}
-
-.deleteBtn:hover {
-  background-color: #c82333;
-}
-
-.moreDetailBtn {
-  background-color: #28a745;
-}
-
-.moreDetailBtn:hover {
-  background-color: #218838;
-} */
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -310,6 +267,10 @@ td.resTable {
 
 .resTable.action button {
   margin: 0 10px;
+}
+
+.homeBtns {
+  flex-direction: column;
 }
 }
 

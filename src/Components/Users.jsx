@@ -2,10 +2,14 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import spinner from "../images/spinner2.gif";
 import { Modal } from "./Modal";
+import search from '../images/search.svg'
+import close from '../images/closeBtn.svg'
 
 const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
   const [showModal, setShowModal] = useState(false);
   const [userid, setUserId] = useState(null)
+  const [searchUser, setSearchUser] = useState("")
+  const [savedFetchUser, setSavedFetchUser] = useState('')
 
   //fetch Users
   useEffect(() => {
@@ -13,10 +17,11 @@ const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);
+        setSavedFetchUser(data)
         setLoading(false);
       })
       .catch((error) => {
-        setError("Failed to fetch users");
+        setError(error);
         setLoading(false);
       });
   }, []);
@@ -43,7 +48,6 @@ const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
 
 
   //Delete User
-
   const handleDelete = (id) => {
     setLoading(true);
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`, { method: 'DELETE' })
@@ -52,6 +56,21 @@ const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
       })
       .catch(error => console.log(error));
   };
+
+
+  // handle Search
+  const handleSearchBtn = ()=>{
+    const filterUser = users?.filter((user)=>user.name.toLocaleLowerCase().includes(searchUser.toLocaleLowerCase()))
+    setUsers(filterUser);
+    // setSearchUser("")
+  }
+
+  //handle close Button
+  const handleClose = ()=>{
+    setSearchUser("")
+    setUsers(savedFetchUser)
+  }
+
 
   return (
     <>
@@ -67,7 +86,12 @@ const Users = ({ users, setUsers, loading, setLoading, error, setError }) => {
 
           {error ? (<div className="allErrors"><p>{error}</p></div>) : (
             <>
-              <div>
+              <div className="homeBtns">
+              <div className="search-container">
+                <input type="text" value={searchUser} onChange={(e)=> setSearchUser(e.target.value)}/>
+                <img src={close} className="closeBtn" onClick={handleClose}/>
+                <img src={search} className="searchBtn" onClick={handleSearchBtn}/>
+                </div>
                 <button className="adduser" onClick={openModal}>
                   + Add New User
                 </button>
