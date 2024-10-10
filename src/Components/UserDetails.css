@@ -1,0 +1,88 @@
+.business-card {
+    width: 450px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .front-side {
+    padding: 20px;
+  }
+  
+  .front-side h1 {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin: 15px 0;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-info li {
+    margin-bottom: 10px;
+  }
+  
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    border: none;
+    /* align-items: center; */
+}
+
+p.userName {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.contact-info li {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    font-size: 19px;
+    color: #000;;
+    font-weight: 600;
+}
+
+p.cardMainDetails {
+    margin: 18px 0;
+    margin-right: 11px;
+    width: 87px;
+    text-align: right;
+    color: #0b82fff0;
+    font-weight: 600;
+}
+
+.userName {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.userName div {
+    font-size: 19px;
+    margin-right: 11px;
+    width: 87px;
+    text-align: right;
+    color: #0b82fff0;
+    font-weight: 600;
+}
